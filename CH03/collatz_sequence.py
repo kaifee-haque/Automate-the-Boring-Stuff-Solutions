@@ -4,7 +4,10 @@ def collatz(number):
     else:
         return 3 * number + 1
 
-userNumber = int(input("Enter a number: "))
-while(userNumber != 1):
-    userNumber = collatz(userNumber)
-    print(userNumber)
+try:
+    userNumber = int(input("Enter a positive integer: "))
+    while userNumber != 1:
+        userNumber = collatz(userNumber)
+        print(userNumber)
+except ValueError:
+    print("Input must be a positive integer.")
