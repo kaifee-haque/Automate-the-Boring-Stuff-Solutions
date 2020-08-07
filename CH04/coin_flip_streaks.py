@@ -13,10 +13,10 @@ def streaks_in_list():
                 return True
 
 def percent_of_streaks(trials):
-    counter = 0
+    streaks = 0
     for i in range(trials):
         if streaks_in_list() == True:
-            counter += 1
-    return counter / trials
+            streaks += 1
+    return streaks / trials
 
 print(f"Chance of streak: {percent_of_streaks(10000) * 100}%")
