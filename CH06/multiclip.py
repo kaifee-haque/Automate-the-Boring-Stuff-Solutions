@@ -1,5 +1,5 @@
 #! python3
-import sys, pyperclip, shelve
+import sys, pyperclip, shelve, pprint
 from pathlib import Path
 
 shelf_file = shelve.open("clip")
@@ -17,23 +17,26 @@ much weight for a single megabyte of data struck him as decadent."""}
     shelf_file["entries"] = entries
     shelf_file.close()
 else:
-    entries = shelf_file[entries]
+    entries = shelf_file["entries"]
 
 if __name__ != "__main__":
     print("Program must be executed from the command line.")
     sys.exit()
 
-if len(sys.argv) < 3 or len(sys.argv) > 4:
+if (len(sys.argv) < 3 and sys.argv[1] != "list") or len(sys.argv) > 4:
     print("""Usage:
-To copy an entry: python multiclip copy <keyphrase>
-To add an entry: python multiclip add <keyphrase> <text>
-To remove an entry: python multiclip delete <keyphrase>
-To clear the clipboard: python multiclip delete <keyphrase>""")
+To copy an entry: python multiclip.py copy <keyphrase>
+To add an entry: python multiclip.py add <keyphrase> <text>
+To remove an entry: python multiclip.py delete <keyphrase>
+To clear the clipboard: python multiclip.py delete <keyphrase>
+To list all entries: python multiclip.py list""")
+    sys.exit()
 
 command = sys.argv[1]
-keyphrase = sys.argv[2]
+if len(sys.argv) > 2:
+    keyphrase = sys.argv[2]
 if len(sys.argv) == 4:
-    text = ays.argv[3]
+    text = sys.argv[3]
 
 if command == "copy":
     if keyphrase in entries:
@@ -41,8 +44,8 @@ if command == "copy":
     else:
         print(f"No entry named {keyphrase} exists.")
 
-elif command == "add" and sys.argv == 4:
-    entries[keyphrase] == text
+elif command == "add" and len(sys.argv) == 4:
+    entries[keyphrase] = text
     shelf_file = shelf_file = shelve.open("clip")
     shelf_file["entries"] = entries
     shelf_file.close()
@@ -52,3 +55,6 @@ elif command == "delete":
     shelf_file = shelf_file = shelve.open("clip")
     shelf_file["entries"] = entries
     shelf_file.close()
+
+elif command == "list":
+    pprint.pprint(entries)
