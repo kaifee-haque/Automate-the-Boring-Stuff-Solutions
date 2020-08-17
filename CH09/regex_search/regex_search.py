@@ -1,4 +1,7 @@
 #! python3
+"""Searches every text files in a directory for a string that matches a given
+regular expression."""
+
 import os, re
 from pathlib import Path
 
