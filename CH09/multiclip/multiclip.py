@@ -1,6 +1,12 @@
 #! python3
+"""A multi clipboard that allows users to store long strings and retrive them
+using short keywords."""
+
 import sys, pyperclip, shelve, pprint
 from pathlib import Path
+
+#If the shelf file is empty, populate it with two quotes from "The Expanse".
+#Otherwise, create a reference to an existing shelf file.
 
 shelf_file = shelve.open("clip")
 if len(shelf_file) == 0:
@@ -18,6 +24,8 @@ much weight for a single megabyte of data struck him as decadent."""}
     shelf_file.close()
 else:
     entries = shelf_file["entries"]
+
+#If the module is imported or incorrect arguments are passed to it, exit.
 
 if __name__ != "__main__":
     print("Program must be executed from the command line.")
