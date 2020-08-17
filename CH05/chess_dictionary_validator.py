@@ -1,4 +1,16 @@
+#! python3
+
 def validator(c_dict):
+    """Takes a chess board configuration and determines whether or not
+    it is valid.
+
+    Args:
+        c_dict: A dictionary representing a chess board configuration.
+
+    Returns:
+        A boolean indicating whether or not the configuration is valid.
+    """
+    
     white_types = ["wking", "wqueen", "wbishop", "wknight", "wrook", "wpawn"]
     black_types = ["bking", "bqueen", "bbishop", "bknight", "brook", "bpawn"]
 
