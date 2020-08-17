@@ -1,3 +1,6 @@
+#! python3
+"""Takes a number from the user and prints its collatz sequence."""
+
 def collatz(number):
     if number % 2 == 0:
         return number // 2
