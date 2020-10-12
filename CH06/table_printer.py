@@ -1,5 +1,6 @@
 #! python3
 
+
 def print_table(table):
     """Prints a given list as a text-based table, right-justified for each
     column.
@@ -27,6 +28,7 @@ def print_table(table):
             table[j][i] = table[j][i].rjust(max_length[j])
             print(table[j][i], end = " ")
         print("")
+
 
 table_data = [["apples", "oranges", "cherries", "banana"],
              ["Alice", "Bob", "Carol", "David"],

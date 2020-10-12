@@ -2,8 +2,10 @@
 """A multi clipboard that allows users to store long strings and retrive them
 using short keywords."""
 
+
 import sys, pyperclip, shelve, pprint
 from pathlib import Path
+
 
 #If the shelf file is empty, populate it with two quotes from "The Expanse".
 #Otherwise, create a reference to an existing shelf file.
@@ -25,6 +27,7 @@ much weight for a single megabyte of data struck him as decadent."""}
 else:
     entries = shelf_file["entries"]
 
+
 #If the module is imported or incorrect arguments are passed to it, exit.
 
 if __name__ != "__main__":
@@ -39,6 +42,7 @@ To remove an entry: python multiclip.py delete <keyphrase>
 To clear the clipboard: python multiclip.py delete <keyphrase>
 To list all entries: python multiclip.py list""")
     sys.exit()
+
 
 command = sys.argv[1]
 if len(sys.argv) > 2:

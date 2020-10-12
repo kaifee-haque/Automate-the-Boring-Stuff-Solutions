@@ -1,8 +1,10 @@
 #! python3
 """Determines whether a given password is strong or weak."""
 
+
 import re
 import sys
+
 
 def is_strong_password(password):
     """Determines whether a string is a strong password or a weak password.
@@ -30,9 +32,10 @@ def is_strong_password(password):
     else:
         return True
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python strong_password_detection <password>")
+        print("Usage: python strong_password_detection.py <password>")
         sys.exit()
     if is_strong_password(sys.argv[1]):
         print("Password is strong.")

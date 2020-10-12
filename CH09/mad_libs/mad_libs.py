@@ -2,7 +2,9 @@
 """A mad libs game where the keywords in a text file are replaced by words
 chosen by the user."""
 
+
 import re
+
 
 madlibs = re.compile(r"ADJECTIVE|NOUN|ADVERB|VERB")
 

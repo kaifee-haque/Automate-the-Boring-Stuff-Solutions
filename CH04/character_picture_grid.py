@@ -1,6 +1,7 @@
 #! python3
 """Prints a grid from a list of lists of characters."""
 
+
 test_grid = [['.', '.', '.', '.', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
@@ -10,6 +11,7 @@ test_grid = [['.', '.', '.', '.', '.', '.'],
         ['O', 'O', 'O', 'O', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
+
 
 def picture_grid(grid):
     """Takes a list of lists containing characters and prints a grid.
@@ -22,5 +24,6 @@ def picture_grid(grid):
         for row in range(len(grid)):
             print(grid[row][column], end = "")
         print("")
+
 
 picture_grid(test_grid)

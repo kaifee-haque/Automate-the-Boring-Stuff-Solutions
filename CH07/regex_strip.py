@@ -3,8 +3,10 @@
 A version of the strip() function that uses regular expressions.
 """
 
+
 import re
 import sys
+
 
 def restrip(string, mode = "a"):
     """Strips leading and/or trailing whitespace from a given string.
@@ -29,9 +31,10 @@ def restrip(string, mode = "a"):
     elif mode == "r":
         return whitespace_r.sub("", string)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 3 or sys.argv[1] not in ["a", "l", "r"]:
-        print("Usage: python regex_strip <a/l/r> <string>")
+        print("Usage: python regex_strip.py <a/l/r> <string>")
         sys.exit()
     else:
         print(restrip(sys.argv[2]))

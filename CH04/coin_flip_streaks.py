@@ -2,7 +2,9 @@
 """Using a given number of trials, calculates the probability that a streak of
 6 heads or 6 tails will occur in a series of 100 coin tosses."""
 
+
 import random
+
 
 def streaks_in_list():
     """Determines whether or not a streak of 6 heads of 6 tails occurs in
@@ -26,6 +28,7 @@ def streaks_in_list():
             if j == 5:
                 return True
 
+
 def percent_of_streaks(trials):
     """Calls the streaks_in_list function for each trial and determines the
     probability of a streak occurring.
@@ -41,5 +44,6 @@ def percent_of_streaks(trials):
         if streaks_in_list() == True:
             streaks += 1
     return streaks / trials
+
 
 print(f"Chance of streak: {percent_of_streaks(10000) * 100}%")

@@ -2,8 +2,10 @@
 """Searches every text file in a directory for a string that matches a given
 regular expression."""
 
+
 import os, re
 from pathlib import Path
+
 
 files = os.listdir(Path.cwd())
 
