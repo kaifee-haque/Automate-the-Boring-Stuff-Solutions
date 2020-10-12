@@ -1,5 +1,5 @@
 #! python3
-"""Searches every text files in a directory for a string that matches a given
+"""Searches every text file in a directory for a string that matches a given
 regular expression."""
 
 import os, re
