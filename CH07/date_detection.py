@@ -1,6 +1,7 @@
 #! python3
 import re
 
+
 def find_valid_dates(text):
     """Searches for valid dates in a given string.
 
@@ -32,5 +33,6 @@ def find_valid_dates(text):
         and (date[2] == "02" and date[0] >= 29):
             del date
     return dates
+
 
 print(find_valid_dates("30/02/2020"))

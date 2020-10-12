@@ -1,11 +1,13 @@
 #! python3
 """Takes a number from the user and prints its collatz sequence."""
 
+
 def collatz(number):
     if number % 2 == 0:
         return number // 2
     else:
         return 3 * number + 1
+
 
 try:
     userNumber = int(input("Enter a positive integer: "))

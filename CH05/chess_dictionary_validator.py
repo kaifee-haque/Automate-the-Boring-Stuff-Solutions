@@ -1,5 +1,6 @@
 #! python3
 
+
 def validator(c_dict):
     """Takes a chess board configuration and determines whether or not
     it is valid.
@@ -47,4 +48,6 @@ def validator(c_dict):
         return False
 
     return True
+
+
 print(validator({'1h': 'bking', '6c': 'bking', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}))
