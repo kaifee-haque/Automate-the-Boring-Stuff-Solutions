@@ -20,8 +20,8 @@ def main(args):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python selective_copy,py <file extension> <new folder>")
-        print("Example python selective_copy,py .txt text_files")
+        print("Usage: python selective_copy.py <file extension> <new folder>")
+        print("Example python selective_copy.py .txt text_files")
         sys.exit()
     else:
         main(sys.argv)
